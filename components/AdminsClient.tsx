@@ -23,10 +23,10 @@ export default function AdminsClient({ initialAdmins }: AdminsClientProps) {
   const [deleteModal, setDeleteModal] = useState<any>(null);
   const [loading, setLoading] = useState(false);
 
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<AdminFormData>({
-    resolver: zodResolver(adminSchema),
-    defaultValues: { role: "admin" },
-  });
+const { register, handleSubmit, reset, formState: { errors } } = useForm({
+  resolver: zodResolver(adminSchema) as any,
+  defaultValues: { role: "admin" },
+});
 
   const onSubmit = async (data: AdminFormData) => {
     setSubmitting(true);
