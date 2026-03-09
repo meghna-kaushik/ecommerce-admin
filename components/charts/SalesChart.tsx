@@ -30,7 +30,7 @@ export default function SalesChart({ salesData }: SalesChartProps) {
           <YAxis tickFormatter={(v) => `$${(v/1000).toFixed(0)}k`} tick={{ fontSize: 11, fill: "#94a3b8" }} axisLine={false} tickLine={false} />
           <Tooltip
             contentStyle={{ backgroundColor: "#1e293b", border: "1px solid #334155", borderRadius: "8px", color: "#f1f5f9", fontSize: "12px" }}
-            formatter={(value: number) => [`$${value.toLocaleString()}`, undefined]}
+            formatter={(value: number | undefined) => [`$${(value ?? 0).toLocaleString()}`, undefined] as any}
           />
           <Legend wrapperStyle={{ fontSize: "12px", color: "#64748b" }} />
           <Area type="monotone" dataKey="sales" stroke="#3b82f6" strokeWidth={2} fill="url(#colorSales)" name="Sales" />

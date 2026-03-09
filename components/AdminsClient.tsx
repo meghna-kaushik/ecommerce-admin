@@ -22,12 +22,11 @@ export default function AdminsClient({ initialAdmins }: AdminsClientProps) {
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [deleteModal, setDeleteModal] = useState<any>(null);
   const [loading, setLoading] = useState(false);
-
-const { register, handleSubmit, reset, formState: { errors } } = useForm({
+  
+const { register, handleSubmit, reset, formState: { errors } } = useForm<AdminFormData>({
   resolver: zodResolver(adminSchema) as any,
   defaultValues: { role: "admin" },
 });
-
   const onSubmit = async (data: AdminFormData) => {
     setSubmitting(true);
     try {

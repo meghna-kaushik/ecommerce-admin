@@ -34,7 +34,7 @@ export default function CategoryChart({ categoryBreakdown }: CategoryChartProps)
           </Pie>
           <Tooltip
             contentStyle={{ backgroundColor: "#1e293b", border: "1px solid #334155", borderRadius: "8px", color: "#f1f5f9", fontSize: "12px" }}
-            formatter={(value: number) => [value, "Products"]}
+            formatter={(value: number | undefined) => [value ?? 0, "Products"]}
           />
           <Legend wrapperStyle={{ fontSize: "11px", color: "#64748b" }} iconType="circle" iconSize={8} />
         </PieChart>

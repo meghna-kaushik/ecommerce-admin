@@ -27,7 +27,7 @@ export default function ProductModal({ product, onClose, onSaved }: ProductModal
   const fileRef = useRef<HTMLInputElement>(null);
 
   const { register, handleSubmit, trigger, setValue, formState: { errors } } = useForm<ProductFormData>({
-    resolver: zodResolver(productSchema),
+    resolver: zodResolver(productSchema) as any,
     defaultValues: product ? {
       name: product.name, description: product.description, price: product.price,
       category: product.category, stock: product.stock, sku: product.sku,
