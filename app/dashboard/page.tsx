@@ -75,7 +75,7 @@ export default async function DashboardPage() {
           <SalesChart salesData={data.salesData} />
         </div>
         <div>
-          <CategoryChart categoryBreakdown={data.categoryBreakdown} />
+          <CategoryChart data={data.categoryBreakdown} />
         </div>
       </div>
 

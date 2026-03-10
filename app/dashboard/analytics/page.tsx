@@ -63,7 +63,7 @@ export default async function AnalyticsPage() {
           <SalesChart salesData={data.salesData} />
         </div>
         <div>
-          <CategoryChart categoryBreakdown={data.categoryBreakdown} />
+          <CategoryChart data={data.categoryBreakdown} />
         </div>
       </div>
       <InventoryBarChart categoryBreakdown={data.categoryBreakdown} />
